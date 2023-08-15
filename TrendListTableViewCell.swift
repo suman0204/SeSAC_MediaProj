@@ -27,32 +27,78 @@ class TrendListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        thumbnailImage.layer.cornerRadius = 10
-        thumbnailImage.layer.maskedCorners = CACornerMask(arrayLiteral: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
-        cardBackView.layer.cornerRadius = 10
-        cardBackView.layer.borderColor = UIColor.clear.cgColor
-        cardBackView.layer.borderWidth = 1
-//        cardBackView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cardBackView.layer.shadowOpacity = 0.4
-        cardBackView.layer.shadowRadius = 8
-        cardBackView.layer.masksToBounds = false
+        
+        configureCell()
     }
 
 
     func configureCell(row: Movie) {
         releaseDate.text = row.releaseDate
-        genre.text = "#\(row.genreIDs)"
+        genre.text = "#\(row.genreText)"
         
         thumbnailImage.kf.setImage(with: URL(string: row.backdropURL))
         
-        rateTitleLabel.text = "평점"
         rateValueLabel.text = row.voteAvgToText
         
         titleLabel.text = row.title
         
-        goToDetailLabel.text = "자세히 보기"
-        arrowImage.image = UIImage(systemName: "chevron.right")
+        
+       
     }
     
+}
+
+extension TrendListTableViewCell {
+    func configureCell() {
+        
+        releaseDate.font = .boldSystemFont(ofSize: 13)
+        releaseDate.textColor = .systemGray
+        
+        genre.font = .boldSystemFont(ofSize: 17)
+        
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 13, weight: .bold)
+        let image = UIImage(systemName: "paperclip", withConfiguration: imageConfig)
+        copyLinkButton.setImage(image, for: .normal)
+//        copyLinkButton.imageEdgeInsets = .init(top: 20, left: 20, bottom: 20, right: 20)
+        copyLinkButton.setTitle("", for: .normal)
+        copyLinkButton.tintColor = .black
+        copyLinkButton.backgroundColor = .white
+        copyLinkButton.layer.cornerRadius = 17.5
+        
+        rateTitleLabel.text = "평점"
+        rateTitleLabel.textAlignment = .center
+        rateTitleLabel.font = .systemFont(ofSize: 13)
+        rateTitleLabel.textColor = .white
+        rateTitleLabel.backgroundColor = .systemIndigo
+        
+        rateValueLabel.textAlignment = .center
+        rateValueLabel.font = .systemFont(ofSize: 13)
+        rateValueLabel.textColor = .black
+        rateValueLabel.backgroundColor = .white
+        
+        thumbnailImage.contentMode = .scaleAspectFill
+        thumbnailImage.layer.cornerRadius = 10
+        thumbnailImage.layer.maskedCorners = CACornerMask(arrayLiteral: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        
+        cardBackView.layer.cornerRadius = 10
+        cardBackView.layer.borderColor = UIColor.clear.cgColor
+        cardBackView.layer.borderWidth = 1
+        cardBackView.layer.shadowOpacity = 0.4
+        cardBackView.layer.shadowRadius = 7
+        cardBackView.layer.masksToBounds = false
+        
+        titleLabel.font = .systemFont(ofSize: 20)
+        
+        actorsLabel.font = .systemFont(ofSize: 13)
+        actorsLabel.textColor = .gray
+        
+        goToDetailLabel.text = "자세히 보기"
+        goToDetailLabel.font = .systemFont(ofSize: 13)
+        
+        arrowImage.image = UIImage(systemName: "chevron.right")
+        arrowImage.tintColor = .black
+        
+        
+        
+    }
 }

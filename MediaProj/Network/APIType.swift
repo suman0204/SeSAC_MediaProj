@@ -7,12 +7,12 @@
 
 import Foundation
 
-//enum MediaType {
+//enum URLMediaType {
 //    case all
 //    case movie
 //    case tv
 //    case person
-//    
+//
 //    var requestURL: String {
 //        switch self {
 //        case .all:
@@ -23,6 +23,17 @@ import Foundation
 //            return URL.makeMediaTypeURL("tv/")
 //        case .person:
 //            return URL.makeMediaTypeURL("person/")
+//        }
+//    }
+//
+//    enum TimeWindow {
+//        case day
+//        case week
+//
+//        var requestURL: String {
+//            switch self {
+//            case
+//            }
 //        }
 //    }
 //}

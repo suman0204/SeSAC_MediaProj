@@ -9,7 +9,7 @@ import UIKit
 
 class TrendListViewController: UIViewController {
     
-    var movieList: [Movie] = [] {
+    var trendMovie: TrendingMovie? {
         didSet {
             trendListTableView.reloadData()
         }
@@ -38,11 +38,11 @@ class TrendListViewController: UIViewController {
             print("result=========")
             print(result)
             
-            self.movieList = result
+            self.trendMovie = result
         }
         
         print("trednListViewController-=======")
-        print(movieList)
+        print(trendMovie)
     }
 
 
@@ -50,20 +50,60 @@ class TrendListViewController: UIViewController {
 
 extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        print("count======")
+        var result: Int = 0
+        
+        if let numberOfRows = trendMovie?.results.count  {
+            result = numberOfRows
+        } else {
+            print("no count")
+        }
+        
+        return result
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = trendListTableView.dequeueReusableCell(withIdentifier: "TrendListTableViewCell") as! TrendListTableViewCell
+        print("row======")
+
+        print(trendMovie?.results[indexPath.row])
         
-        let row = movieList[indexPath.row]
+        if let row = trendMovie?.results[indexPath.row] {
+            cell.configureCell(row: row)
+        } else {
+            print("no row")
+        }
         
-        cell.configureCell(row: row)
-        
+//        let row = tredMovie!.results[indexPath.row]
+//        print("type=====")
+//        print(type(of: row))
+//        cell.configureCell(row: row)
+//
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 450
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var id = ""
+        if let rowID = trendMovie?.results[indexPath.row].id {
+            id = "\(rowID)"
+        } else {
+            print("no id")
+        }
+        
+        TrendingAPIManager.shared.callCreditsRequest(id: id) { result in
+            print(result)
+        }
+        
+        let sb = UIStoryboard(name: "DetailViewController", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+//            print("navigationt")
+            return
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

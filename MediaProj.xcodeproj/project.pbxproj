@@ -16,6 +16,13 @@
 		8BAA10E22A890CDB00A25624 /* APIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA10E12A890CDB00A25624 /* APIType.swift */; };
 		8BAA10E42A8913A900A25624 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA10E32A8913A900A25624 /* Movie.swift */; };
 		8BAA10E72A891DFE00A25624 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA10E62A891DFE00A25624 /* URL+Extension.swift */; };
+		8BAA10EF2A8B79F000A25624 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BAA10EE2A8B79F000A25624 /* DetailViewController.storyboard */; };
+		8BAA10F32A8BC94900A25624 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA10F22A8BC94900A25624 /* Credits.swift */; };
+		8BAA10F52A8BDE7C00A25624 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA10F42A8BDE7C00A25624 /* DetailViewController.swift */; };
+		8BAA10F82A8BE2FF00A25624 /* OverViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA10F62A8BE2FF00A25624 /* OverViewTableViewCell.swift */; };
+		8BAA10F92A8BE2FF00A25624 /* OverViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAA10F72A8BE2FF00A25624 /* OverViewTableViewCell.xib */; };
+		8BAA10FD2A8BE31600A25624 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA10FB2A8BE31600A25624 /* CastTableViewCell.swift */; };
+		8BAA10FE2A8BE31600A25624 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAA10FC2A8BE31600A25624 /* CastTableViewCell.xib */; };
 		8BD528A42A862F56003C031B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD528A32A862F56003C031B /* AppDelegate.swift */; };
 		8BD528A62A862F56003C031B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD528A52A862F56003C031B /* SceneDelegate.swift */; };
 		8BD528A82A862F56003C031B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD528A72A862F56003C031B /* ViewController.swift */; };
@@ -31,10 +38,17 @@
 /* Begin PBXFileReference section */
 		8BAA10D22A88C47000A25624 /* TrendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		8BAA10D32A88C47000A25624 /* TrendListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendListTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		8BAA10DF2A890A8D00A25624 /* TmdbAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TmdbAPIManager.swift; path = TrendListView/TmdbAPIManager.swift; sourceTree = "<group>"; };
+		8BAA10DF2A890A8D00A25624 /* TmdbAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbAPIManager.swift; sourceTree = "<group>"; };
 		8BAA10E12A890CDB00A25624 /* APIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIType.swift; sourceTree = "<group>"; };
 		8BAA10E32A8913A900A25624 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		8BAA10E62A891DFE00A25624 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		8BAA10EE2A8B79F000A25624 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		8BAA10F22A8BC94900A25624 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		8BAA10F42A8BDE7C00A25624 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8BAA10F62A8BE2FF00A25624 /* OverViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewTableViewCell.swift; sourceTree = "<group>"; };
+		8BAA10F72A8BE2FF00A25624 /* OverViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverViewTableViewCell.xib; sourceTree = "<group>"; };
+		8BAA10FB2A8BE31600A25624 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
+		8BAA10FC2A8BE31600A25624 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
 		8BD528A02A862F56003C031B /* MediaProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD528A32A862F56003C031B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BD528A52A862F56003C031B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8BAA10E32A8913A900A25624 /* Movie.swift */,
+				8BAA10F22A8BC94900A25624 /* Credits.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -77,6 +92,46 @@
 				8BAA10E62A891DFE00A25624 /* URL+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		8BAA10EB2A8B70F200A25624 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8BD528B92A862F97003C031B /* APIKey.swift */,
+				8BAA10E12A890CDB00A25624 /* APIType.swift */,
+				8BAA10DF2A890A8D00A25624 /* TmdbAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8BAA10EC2A8B742C00A25624 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8BD528BF2A88C2DC003C031B /* TrendListView */,
+				8BAA10ED2A8B79C800A25624 /* DetailView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8BAA10ED2A8B79C800A25624 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				8BAA10EE2A8B79F000A25624 /* DetailViewController.storyboard */,
+				8BAA10F42A8BDE7C00A25624 /* DetailViewController.swift */,
+				8BAA10FA2A8BE30600A25624 /* Cell */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		8BAA10FA2A8BE30600A25624 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8BAA10F62A8BE2FF00A25624 /* OverViewTableViewCell.swift */,
+				8BAA10F72A8BE2FF00A25624 /* OverViewTableViewCell.xib */,
+				8BAA10FB2A8BE31600A25624 /* CastTableViewCell.swift */,
+				8BAA10FC2A8BE31600A25624 /* CastTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8BD528972A862F56003C031B = {
@@ -98,17 +153,15 @@
 		8BD528A22A862F56003C031B /* MediaProj */ = {
 			isa = PBXGroup;
 			children = (
-				8BAA10DF2A890A8D00A25624 /* TmdbAPIManager.swift */,
 				8BAA10E52A891DD400A25624 /* Model */,
-				8BAA10E12A890CDB00A25624 /* APIType.swift */,
+				8BAA10EB2A8B70F200A25624 /* Network */,
 				8BD528A32A862F56003C031B /* AppDelegate.swift */,
 				8BD528A52A862F56003C031B /* SceneDelegate.swift */,
 				8BD528A72A862F56003C031B /* ViewController.swift */,
 				8BD528A92A862F56003C031B /* Main.storyboard */,
 				8BAA10E82A891E0100A25624 /* Extension */,
-				8BD528BF2A88C2DC003C031B /* TrendListView */,
+				8BAA10EC2A8B742C00A25624 /* View */,
 				8BD528B72A862F7E003C031B /* .gitignore */,
-				8BD528B92A862F97003C031B /* APIKey.swift */,
 				8BD528AC2A862F57003C031B /* Assets.xcassets */,
 				8BD528AE2A862F57003C031B /* LaunchScreen.storyboard */,
 				8BD528B12A862F57003C031B /* Info.plist */,
@@ -197,7 +250,10 @@
 			files = (
 				8BD528BE2A88C2CD003C031B /* TrendListView.storyboard in Resources */,
 				8BAA10D52A88C47000A25624 /* TrendListTableViewCell.xib in Resources */,
+				8BAA10FE2A8BE31600A25624 /* CastTableViewCell.xib in Resources */,
+				8BAA10EF2A8B79F000A25624 /* DetailViewController.storyboard in Resources */,
 				8BD528B82A862F7E003C031B /* .gitignore in Resources */,
+				8BAA10F92A8BE2FF00A25624 /* OverViewTableViewCell.xib in Resources */,
 				8BD528B02A862F57003C031B /* LaunchScreen.storyboard in Resources */,
 				8BD528AD2A862F57003C031B /* Assets.xcassets in Resources */,
 				8BD528AB2A862F56003C031B /* Main.storyboard in Resources */,
@@ -213,11 +269,15 @@
 			files = (
 				8BAA10E02A890A8D00A25624 /* TmdbAPIManager.swift in Sources */,
 				8BD528A82A862F56003C031B /* ViewController.swift in Sources */,
+				8BAA10FD2A8BE31600A25624 /* CastTableViewCell.swift in Sources */,
 				8BAA10E42A8913A900A25624 /* Movie.swift in Sources */,
+				8BAA10F52A8BDE7C00A25624 /* DetailViewController.swift in Sources */,
 				8BAA10E72A891DFE00A25624 /* URL+Extension.swift in Sources */,
 				8BD528BC2A88C2AC003C031B /* TrendListViewController.swift in Sources */,
+				8BAA10F32A8BC94900A25624 /* Credits.swift in Sources */,
 				8BD528A42A862F56003C031B /* AppDelegate.swift in Sources */,
 				8BAA10E22A890CDB00A25624 /* APIType.swift in Sources */,
+				8BAA10F82A8BE2FF00A25624 /* OverViewTableViewCell.swift in Sources */,
 				8BAA10D42A88C47000A25624 /* TrendListTableViewCell.swift in Sources */,
 				8BD528BA2A862F97003C031B /* APIKey.swift in Sources */,
 				8BD528A62A862F56003C031B /* SceneDelegate.swift in Sources */,
