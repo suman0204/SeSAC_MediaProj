@@ -123,4 +123,5 @@ enum OriginalLanguage: String, Codable {
     case hi = "hi"
     case yo = "yo"
     case zh = "zh"
+    case fr = "fr"
 }

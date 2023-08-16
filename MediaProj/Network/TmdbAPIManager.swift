@@ -7,8 +7,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
-
 
 class TrendingAPIManager {
     
@@ -25,10 +23,10 @@ class TrendingAPIManager {
         AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseDecodable(of: TrendingMovie.self) { response in
             print(response.value?.results)
 //            print(type(of: response.value))
-            
             if let result = response.value {
                 resultData(result)
             } else {
+                debugPrint(response)
                 print("no result data")
             }
         }
