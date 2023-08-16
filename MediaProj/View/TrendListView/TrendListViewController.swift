@@ -14,6 +14,10 @@ class TrendListViewController: UIViewController {
             trendListTableView.reloadData()
         }
     }
+    
+//    var credits: Credits?
+        
+    
 
     @IBOutlet var hamburgerButton: UIBarButtonItem!
     @IBOutlet var searchButton: UIBarButtonItem!
@@ -39,10 +43,31 @@ class TrendListViewController: UIViewController {
             print(result)
             
             self.trendMovie = result
+            print("trendMoiveeeeeeee")
+            print(self.trendMovie)
+          
+                
+//                for movie in self.trendMovie!.results {
+//                    print("movieeeeee")
+//                    print(movie)
+//                    TrendingAPIManager.shared.callCreditsRequest(id: "\(movie.id)") { result in
+//                        print("result==========credit")
+//                        print(result)
+//                        self.credits?.append(result)
+//                        print("resultnameeeeee")
+//                        print(result.castNameList)
+//                        print("CallCreditsRequestsssss")
+//                        print(self.credits)
+//                    }
+//                }
+            
         }
         
         print("trednListViewController-=======")
         print(trendMovie)
+//        print(credits)
+        print("trednListViewController-credits=======")
+
     }
 
 
@@ -50,7 +75,6 @@ class TrendListViewController: UIViewController {
 
 extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count======")
         var result: Int = 0
         
         if let numberOfRows = trendMovie?.results.count  {
@@ -65,11 +89,16 @@ extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = trendListTableView.dequeueReusableCell(withIdentifier: "TrendListTableViewCell") as! TrendListTableViewCell
         print("row======")
-
+        print(trendMovie)
         print(trendMovie?.results[indexPath.row])
+
         
         if let row = trendMovie?.results[indexPath.row] {
-            cell.configureCell(row: row)
+
+            
+            cell.configureCellData(row: row)
+            
+
         } else {
             print("no row")
         }
@@ -88,22 +117,24 @@ extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var id = ""
+        
         if let rowID = trendMovie?.results[indexPath.row].id {
             id = "\(rowID)"
         } else {
             print("no id")
         }
-        
-        TrendingAPIManager.shared.callCreditsRequest(id: id) { result in
-            print(result)
-        }
-        
+//
         let sb = UIStoryboard(name: "DetailViewController", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
 //            print("navigationt")
             return
         }
+        vc.id = id
+        vc.overViewText = trendMovie?.results[indexPath.row].overview ?? "No OverView"
         
         navigationController?.pushViewController(vc, animated: true)
+
+        
+        print("didselect")
     }
 }

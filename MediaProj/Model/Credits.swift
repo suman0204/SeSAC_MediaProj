@@ -11,6 +11,15 @@ import Foundation
 struct Credits: Codable {
     let id: Int
     let cast, crew: [Cast]
+    
+    var castNameList: String {
+        
+        var result: String = ""
+        for index in 0...5 {
+            result += cast[index].name
+        }
+        return result
+    }
 }
 
 // MARK: - Cast
@@ -27,6 +36,11 @@ struct Cast: Codable {
     let order: Int?
     let department: Department?
     let job: String?
+    
+    var profileURL: String {
+        return "https://image.tmdb.org/t/p/original\(profilePath)"
+    }
+
 
     enum CodingKeys: String, CodingKey {
         case adult, gender, id

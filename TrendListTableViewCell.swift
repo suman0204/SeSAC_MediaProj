@@ -28,19 +28,22 @@ class TrendListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        configureCell()
+        configureCellDesign()
     }
 
 
-    func configureCell(row: Movie) {
+    func configureCellData(row: Movie) {
         releaseDate.text = row.releaseDate
         genre.text = "#\(row.genreText)"
         
         thumbnailImage.kf.setImage(with: URL(string: row.backdropURL))
         
+        
         rateValueLabel.text = row.voteAvgToText
         
         titleLabel.text = row.title
+        
+        actorsLabel.text = "castNames"
         
         
        
@@ -49,7 +52,7 @@ class TrendListTableViewCell: UITableViewCell {
 }
 
 extension TrendListTableViewCell {
-    func configureCell() {
+    func configureCellDesign() {
         
         releaseDate.font = .boldSystemFont(ofSize: 13)
         releaseDate.textColor = .systemGray

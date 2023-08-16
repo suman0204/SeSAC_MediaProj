@@ -22,7 +22,7 @@ class TrendingAPIManager {
         let header: HTTPHeaders = APIKey.header
         
         
-        AF.request(url, method: .get, headers: header).validate().responseDecodable(of: TrendingMovie.self) { response in
+        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseDecodable(of: TrendingMovie.self) { response in
             print(response.value?.results)
 //            print(type(of: response.value))
             
@@ -40,7 +40,13 @@ class TrendingAPIManager {
         
         AF.request(url, method: .get, headers: header).validate().responseDecodable(of: Credits.self) { response in
             print(url)
-            print(response.value)
+//            print(response.value)
+            
+            if let result = response.value {
+                resultData(result)
+            } else {
+                print("no result Data")
+            }
         }
 
     }

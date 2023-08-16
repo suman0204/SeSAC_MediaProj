@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
+    var id: String = ""
+    var overViewText: String = ""
+    var castList: [Cast] = []
+    
     @IBOutlet var HeaderView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var posterImage: UIImageView!
@@ -25,11 +30,21 @@ class DetailViewController: UIViewController {
         
         creditTableView.register(overViewNib, forCellReuseIdentifier: "OverViewTableViewCell")
         creditTableView.register(castNib, forCellReuseIdentifier: "CastTableViewCell")
+        
+        TrendingAPIManager.shared.callCreditsRequest(id: id) { result in
+            self.castList = result.cast
+        }
     }
     
 
 
 
+}
+
+extension DetailViewController {
+    func configureCastCell() {
+        
+    }
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -49,7 +64,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 2
         } else {
-            return 3
+            return castList.count
         }
     }
     
@@ -57,9 +72,21 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = creditTableView.dequeueReusableCell(withIdentifier: "OverViewTableViewCell") as! OverViewTableViewCell
             return cell
-        } else {
+            
+        } else if indexPath.section == 1 {
             let cell = creditTableView.dequeueReusableCell(withIdentifier: "CastTableViewCell") as! CastTableViewCell
+            
+            let cast = castList[indexPath.row]
+            
+            print("casttttttt")
+            print(cast)
+            
+            cell.configureCell(cast: cast)
+            
             return cell
+            
+        } else {
+            return UITableViewCell()
         }
     }
     
