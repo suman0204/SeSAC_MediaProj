@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CastTableViewCell: UITableViewCell {
+//    var casts: [Cast] = []
 
     @IBOutlet var actorImage: UIImageView!
     @IBOutlet var actorNameLabel: UILabel!
@@ -16,6 +18,7 @@ class CastTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         actorImage.layer.cornerRadius = 10
+        actorImage.contentMode = .scaleAspectFill
         
         actorNameLabel.font = .boldSystemFont(ofSize: 15)
         actorNameLabel.textColor = .black
@@ -25,9 +28,14 @@ class CastTableViewCell: UITableViewCell {
     }
     
     func configureCell(cast: Cast) {
+        
         print("casttableview profileurl")
         print(cast.profileURL)
         actorImage.kf.setImage(with: URL(string: cast.profileURL))
+        
+        actorNameLabel.text = cast.name
+        
+        characterNameLabel.text = cast.character
     }
     
 }

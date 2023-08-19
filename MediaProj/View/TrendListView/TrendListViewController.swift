@@ -61,6 +61,8 @@ class TrendListViewController: UIViewController {
 //                    }
 //                }
             
+        } failure: {
+            print("ERROR")
         }
         
         print("trednListViewController-=======")
@@ -116,12 +118,11 @@ extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var id = ""
         
-        if let rowID = trendMovie?.results[indexPath.row].id {
-            id = "\(rowID)"
-        } else {
-            print("no id")
+        
+        guard let row = trendMovie?.results[indexPath.row] else {
+            print("no Row")
+            return
         }
 //
         let sb = UIStoryboard(name: "DetailViewController", bundle: nil)
@@ -129,8 +130,14 @@ extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
 //            print("navigationt")
             return
         }
-        vc.id = id
-        vc.overViewText = trendMovie?.results[indexPath.row].overview ?? "No OverView"
+        
+        if let movie = trendMovie?.results[indexPath.row] {
+            vc.movie = movie
+        }
+//        vc.id = "\(row.id)"
+//        vc.overViewText = row.overview
+//        
+//        vc.configureCastCell(movie: row)
         
         navigationController?.pushViewController(vc, animated: true)
 

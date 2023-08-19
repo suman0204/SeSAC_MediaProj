@@ -38,7 +38,7 @@ struct Cast: Codable {
     let job: String?
     
     var profileURL: String {
-        return "https://image.tmdb.org/t/p/original\(profilePath)"
+        return "https://image.tmdb.org/t/p/original\(profilePath ?? "")"
     }
 
 

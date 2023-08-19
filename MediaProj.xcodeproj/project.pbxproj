@@ -172,10 +172,10 @@
 		8BD528BF2A88C2DC003C031B /* TrendListView */ = {
 			isa = PBXGroup;
 			children = (
-				8BAA10D22A88C47000A25624 /* TrendListTableViewCell.swift */,
-				8BAA10D32A88C47000A25624 /* TrendListTableViewCell.xib */,
-				8BD528BD2A88C2CD003C031B /* TrendListView.storyboard */,
 				8BD528BB2A88C2AC003C031B /* TrendListViewController.swift */,
+				8BAA10D32A88C47000A25624 /* TrendListTableViewCell.xib */,
+				8BAA10D22A88C47000A25624 /* TrendListTableViewCell.swift */,
+				8BD528BD2A88C2CD003C031B /* TrendListView.storyboard */,
 			);
 			path = TrendListView;
 			sourceTree = "<group>";

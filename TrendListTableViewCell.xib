@@ -102,6 +102,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cRv-qP-qMM" secondAttribute="trailing" constant="20" id="6h0-fI-7ce"/>
                             <constraint firstAttribute="trailing" secondItem="Err-JZ-VhS" secondAttribute="trailing" constant="15" id="7tb-Rm-Id8"/>
                             <constraint firstItem="82N-GN-JdV" firstAttribute="top" secondItem="cCT-dR-FGq" secondAttribute="top" constant="15" id="8AS-Bl-IZw"/>
                             <constraint firstItem="mu5-Ta-MYC" firstAttribute="top" secondItem="cRv-qP-qMM" secondAttribute="bottom" constant="5" id="D6A-HM-eYf"/>
@@ -110,6 +111,7 @@
                             <constraint firstItem="cRv-qP-qMM" firstAttribute="top" secondItem="X1Y-36-r8N" secondAttribute="bottom" constant="15" id="Jnv-Ie-pF1"/>
                             <constraint firstAttribute="trailing" secondItem="82N-GN-JdV" secondAttribute="trailing" constant="15" id="KK2-O4-Q5v"/>
                             <constraint firstItem="X1Y-36-r8N" firstAttribute="leading" secondItem="cCT-dR-FGq" secondAttribute="leading" id="M0e-dE-8e0"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mu5-Ta-MYC" secondAttribute="trailing" constant="20" id="M8a-Do-qKe"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="55O-Eq-Dyf" secondAttribute="bottom" constant="10" id="SLJ-2u-crl"/>
                             <constraint firstItem="6zG-8e-YEV" firstAttribute="leading" secondItem="cCT-dR-FGq" secondAttribute="leading" constant="15" id="SOE-Yz-acD"/>
                             <constraint firstItem="Err-JZ-VhS" firstAttribute="centerY" secondItem="55O-Eq-Dyf" secondAttribute="centerY" id="Sbh-7a-Vms"/>

@@ -9,11 +9,20 @@ import UIKit
 import Kingfisher
 
 class DetailViewController: UIViewController {
+    
+    var movie: Movie!
+    
     var id: String = ""
     var overViewText: String = ""
-    var castList: [Cast] = []
+
+    var credits: Credits? {
+        didSet {
+            creditTableView.reloadData()
+        }
+    }
     
     @IBOutlet var HeaderView: UIView!
+    @IBOutlet var backDropImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var posterImage: UIImageView!
     
@@ -31,9 +40,21 @@ class DetailViewController: UIViewController {
         creditTableView.register(overViewNib, forCellReuseIdentifier: "OverViewTableViewCell")
         creditTableView.register(castNib, forCellReuseIdentifier: "CastTableViewCell")
         
-        TrendingAPIManager.shared.callCreditsRequest(id: id) { result in
-            self.castList = result.cast
+        
+        TrendingAPIManager.shared.callCreditsRequest(id: "\(movie.id))") { result in
+            print("callCreditsRequestcallCreditsRequest")
+            print(result)
+            self.credits = result
+        } failure: {
+            print("Error")
         }
+        
+        print("detailviewcontroller didload")
+        print(id)
+        print(overViewText)
+
+        configureCastCell(movie: movie)
+        
     }
     
 
@@ -42,8 +63,16 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController {
-    func configureCastCell() {
+    func configureCastCell(movie: Movie) {
+        titleLabel.text = movie.title 
+        titleLabel.textColor = .white
+        titleLabel.font = .boldSystemFont(ofSize: 23)
         
+        backDropImage.kf.setImage(with: URL(string: movie.backdropURL))
+        backDropImage.contentMode = .scaleAspectFill
+        
+        posterImage.kf.setImage(with: URL(string: movie.posterURL))
+        posterImage.contentMode = .scaleAspectFill
     }
 }
 
@@ -64,19 +93,34 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 2
         } else {
-            return castList.count
+            return credits?.cast.count ?? 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 50
+        } else if indexPath.section == 1{
+            return 100
+        } else {
+            return 100
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = creditTableView.dequeueReusableCell(withIdentifier: "OverViewTableViewCell") as! OverViewTableViewCell
+            cell.overViewTextLabel.text = movie?.overview
             return cell
             
         } else if indexPath.section == 1 {
             let cell = creditTableView.dequeueReusableCell(withIdentifier: "CastTableViewCell") as! CastTableViewCell
             
-            let cast = castList[indexPath.row]
+            guard let cast = credits?.cast[indexPath.row] else {
+                print("no casttt")
+                return UITableViewCell()
+                
+            }
             
             print("casttttttt")
             print(cast)
