@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieVideosCollectionViewCell" customModule="MediaProj" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="152"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="158" height="152"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPX-Ox-rtp">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="152"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cPX-Ox-rtp" secondAttribute="trailing" id="3gb-xh-4Q8"/>
+                <constraint firstItem="cPX-Ox-rtp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mEb-9x-p2U"/>
+                <constraint firstItem="cPX-Ox-rtp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rCz-jx-vwM"/>
+                <constraint firstAttribute="bottom" secondItem="cPX-Ox-rtp" secondAttribute="bottom" id="w7l-iq-XMc"/>
+            </constraints>
+            <size key="customSize" width="158" height="152"/>
+            <connections>
+                <outlet property="movieVideoLink" destination="cPX-Ox-rtp" id="Uq8-7J-Fby"/>
+            </connections>
+            <point key="canvasLocation" x="61.068702290076331" y="55.633802816901408"/>
+        </collectionViewCell>
+    </objects>
+</document>

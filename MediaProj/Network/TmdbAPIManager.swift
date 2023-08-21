@@ -50,4 +50,41 @@ class TrendingAPIManager {
         }
 
     }
+    
+    func callSimilarMovieRequest(id: String, success: @escaping (SimilarMovie) -> Void, failure: @escaping () -> Void ) {
+        let url = URL.makeSimilarMovieURL(id)
+        print(url)
+        let header = APIKey.header
+        
+        AF.request(url, method: .get, headers: header).validate().responseDecodable(of: SimilarMovie.self) { reponse in
+            switch reponse.result {
+            case.success(let value):
+                print(value)
+                success(value)
+            case .failure(let error):
+                print(error)
+                failure()
+            }
+        }
+    }
+    
+    func callMovieVideosRequest(id: String, success: @escaping (MovieVideos) -> Void, failure: @escaping () -> Void ) {
+        let url = URL.makeMoiveVideosURL(id)
+        
+//    https://api.themoviedb.org/3/movie/{movie_id}/videos
+//    https://api.themoviedb.org/3/movie/{movie_id}/similar
+        print(url)
+        let header = APIKey.header
+        
+        AF.request(url, method: .get, headers: header).validate().responseDecodable(of: MovieVideos.self) { reponse in
+            switch reponse.result {
+            case.success(let value):
+                print(value)
+                success(value)
+            case .failure(let error):
+                print(error)
+                failure()
+            }
+        }
+    }
 }

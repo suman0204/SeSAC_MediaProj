@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
             creditTableView.reloadData()
         }
     }
+    @IBOutlet var moreInfoButton: UIBarButtonItem!
     
     @IBOutlet var HeaderView: UIView!
     @IBOutlet var backDropImage: UIImageView!
@@ -30,7 +31,12 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        title = "출연 / 제작"
+        
+        moreInfoButton.title = "More"
+        moreInfoButton.tintColor = .black
+        
         creditTableView.delegate = self
         creditTableView.dataSource = self
         
@@ -57,7 +63,18 @@ class DetailViewController: UIViewController {
         
     }
     
+    @IBAction func moreInfoButtonClicked(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "DetailViewController", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: MoreAboutMovieViewController.identifier) as? MoreAboutMovieViewController else {
+            return
+        }
 
+        vc.id = "\(movie.id)"
+        
+        navigationController?.pushViewController(vc, animated: true)
+     
+    }
+    
 
 
 }

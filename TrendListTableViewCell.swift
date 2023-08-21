@@ -19,6 +19,7 @@ class TrendListTableViewCell: UITableViewCell {
     @IBOutlet var rateValueLabel: UILabel!
     
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var originalTitleLabel: UILabel!
     @IBOutlet var actorsLabel: UILabel!
     @IBOutlet var goToDetailLabel: UILabel!
     @IBOutlet var arrowImage: UIImageView!
@@ -42,6 +43,8 @@ class TrendListTableViewCell: UITableViewCell {
         rateValueLabel.text = row.voteAvgToText
         
         titleLabel.text = row.title
+        
+        originalTitleLabel.text = "(\(row.originalTitle))"
         
         actorsLabel.text = "castNames"
         
@@ -91,6 +94,8 @@ extension TrendListTableViewCell {
         cardBackView.layer.masksToBounds = false
         
         titleLabel.font = .systemFont(ofSize: 20)
+        
+        originalTitleLabel.font = .systemFont(ofSize: 18)
         
         actorsLabel.font = .systemFont(ofSize: 13)
         actorsLabel.textColor = .gray

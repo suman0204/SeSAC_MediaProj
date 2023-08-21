@@ -23,4 +23,12 @@ extension URL {
     static func makeCreditsURL(_ id: String) -> String {
         return baseCreditURL + "\(id)/credits"
     }
+    
+    static func makeSimilarMovieURL(_ id: String) -> String {
+        return baseCreditURL + "\(id)/similar"
+    }
+
+    static func makeMoiveVideosURL(_ id: String) -> String {
+        return baseCreditURL + "\(id)/videos"
+    }
 }
