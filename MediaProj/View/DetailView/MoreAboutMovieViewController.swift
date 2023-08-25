@@ -21,6 +21,7 @@ class MoreAboutMovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         print("MoreAboutViewDidload")
         moreAboutCollectionView.dataSource = self
         moreAboutCollectionView.delegate = self
@@ -82,12 +83,16 @@ extension MoreAboutMovieViewController: UICollectionViewDelegate, UICollectionVi
                 print("No SimilarMovie...")
                 return 0
             }
+            print("similarMovieResultssss")
+            print(similarMovieResult)
             return similarMovieResult.count
         } else if similarVideoSegment.selectedSegmentIndex == 1 {
             guard let movieVideosResult = movieVideos?.results else {
                 print("No MovieVideos...")
                 return 0
             }
+            print("MovieVideosssResultsss")
+            print(movieVideosResult)
             return movieVideosResult.count
         } else {
             return 0
@@ -107,6 +112,7 @@ extension MoreAboutMovieViewController: UICollectionViewDelegate, UICollectionVi
             
             return cell
             
+            
         } else if similarVideoSegment.selectedSegmentIndex == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieVideosCollectionViewCell.identifier, for: indexPath) as? MovieVideosCollectionViewCell else {
                 return UICollectionViewCell()
@@ -125,6 +131,7 @@ extension MoreAboutMovieViewController: UICollectionViewDelegate, UICollectionVi
         } else {
             return UICollectionViewCell()
         }
+        
     }
     
     

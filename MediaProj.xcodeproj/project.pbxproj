@@ -41,6 +41,10 @@
 		8BF853042A93952900F57338 /* MovieVideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853022A93952900F57338 /* MovieVideosCollectionViewCell.swift */; };
 		8BF853052A93952900F57338 /* MovieVideosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF853032A93952900F57338 /* MovieVideosCollectionViewCell.xib */; };
 		8BF853072A9398CC00F57338 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853062A9398CC00F57338 /* ReusableViewProtocol.swift */; };
+		8BF853442A98B9E600F57338 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853432A98B9E600F57338 /* OnboardingViewController.swift */; };
+		8BF853462A98C18C00F57338 /* FirstOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853452A98C18C00F57338 /* FirstOnboardingViewController.swift */; };
+		8BF853492A98C4C900F57338 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF853482A98C4C900F57338 /* SnapKit */; };
+		8BF8534B2A98F59C00F57338 /* SecondOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8534A2A98F59C00F57338 /* SecondOnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +81,9 @@
 		8BF853022A93952900F57338 /* MovieVideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		8BF853032A93952900F57338 /* MovieVideosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieVideosCollectionViewCell.xib; sourceTree = "<group>"; };
 		8BF853062A9398CC00F57338 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		8BF853432A98B9E600F57338 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8BF853452A98C18C00F57338 /* FirstOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewController.swift; sourceTree = "<group>"; };
+		8BF8534A2A98F59C00F57338 /* SecondOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BAA10DE2A89062300A25624 /* Kingfisher in Frameworks */,
+				8BF853492A98C4C900F57338 /* SnapKit in Frameworks */,
 				8BAA10DB2A89061A00A25624 /* SwiftyJSON in Frameworks */,
 				8BAA10D82A89060E00A25624 /* Alamofire in Frameworks */,
 			);
@@ -125,6 +133,7 @@
 		8BAA10EC2A8B742C00A25624 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8BF853422A98B76700F57338 /* OnboardingView */,
 				8BD528BF2A88C2DC003C031B /* TrendListView */,
 				8BAA10ED2A8B79C800A25624 /* DetailView */,
 			);
@@ -212,6 +221,16 @@
 			path = MoreAboutViewCell;
 			sourceTree = "<group>";
 		};
+		8BF853422A98B76700F57338 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				8BF853432A98B9E600F57338 /* OnboardingViewController.swift */,
+				8BF853452A98C18C00F57338 /* FirstOnboardingViewController.swift */,
+				8BF8534A2A98F59C00F57338 /* SecondOnboardingViewController.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +251,7 @@
 				8BAA10D72A89060E00A25624 /* Alamofire */,
 				8BAA10DA2A89061A00A25624 /* SwiftyJSON */,
 				8BAA10DD2A89062300A25624 /* Kingfisher */,
+				8BF853482A98C4C900F57338 /* SnapKit */,
 			);
 			productName = MediaProj;
 			productReference = 8BD528A02A862F56003C031B /* MediaProj.app */;
@@ -265,6 +285,7 @@
 				8BAA10D62A89060E00A25624 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8BAA10D92A89061A00A25624 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				8BAA10DC2A89062300A25624 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8BF853472A98C4C900F57338 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8BD528A12A862F56003C031B /* Products */;
 			projectDirPath = "";
@@ -301,16 +322,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF853462A98C18C00F57338 /* FirstOnboardingViewController.swift in Sources */,
 				8BAA10E02A890A8D00A25624 /* TmdbAPIManager.swift in Sources */,
 				8BF853072A9398CC00F57338 /* ReusableViewProtocol.swift in Sources */,
 				8BD528A82A862F56003C031B /* ViewController.swift in Sources */,
 				8BAA10FD2A8BE31600A25624 /* CastTableViewCell.swift in Sources */,
+				8BF853442A98B9E600F57338 /* OnboardingViewController.swift in Sources */,
 				8BAA10E42A8913A900A25624 /* Movie.swift in Sources */,
 				8BF852D62A92732A00F57338 /* MoreAboutMovieViewController.swift in Sources */,
 				8BF853042A93952900F57338 /* MovieVideosCollectionViewCell.swift in Sources */,
 				8BAA10F52A8BDE7C00A25624 /* DetailViewController.swift in Sources */,
 				8BF852FC2A937BCD00F57338 /* MovieVideos.swift in Sources */,
 				8BAA10E72A891DFE00A25624 /* URL+Extension.swift in Sources */,
+				8BF8534B2A98F59C00F57338 /* SecondOnboardingViewController.swift in Sources */,
 				8BD528BC2A88C2AC003C031B /* TrendListViewController.swift in Sources */,
 				8BF853002A9390F100F57338 /* MovieSimilarCollectionViewCell.swift in Sources */,
 				8BAA10F32A8BC94900A25624 /* Credits.swift in Sources */,
@@ -562,6 +586,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		8BF853472A98C4C900F57338 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -579,6 +611,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8BAA10DC2A89062300A25624 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		8BF853482A98C4C900F57338 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BF853472A98C4C900F57338 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

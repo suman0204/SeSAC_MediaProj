@@ -129,7 +129,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = creditTableView.dequeueReusableCell(withIdentifier: "OverViewTableViewCell") as! OverViewTableViewCell
             cell.overViewTextLabel.text = movie?.overview
             return cell
-            
+                        
         } else if indexPath.section == 1 {
             let cell = creditTableView.dequeueReusableCell(withIdentifier: "CastTableViewCell") as! CastTableViewCell
             

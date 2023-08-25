@@ -29,6 +29,7 @@ class TrendListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationController?.navigationBar.shadowImage = nil
+//        UserDefaults.standard.set(false, forKey: "isLaunched")
         
         trendListTableView.delegate = self
         trendListTableView.dataSource = self
