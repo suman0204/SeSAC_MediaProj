@@ -15,6 +15,7 @@ class TrendListView: BaseView {
     }()
     
     override func configureView() {
+        print("table")
         addSubview(tableView)
     }
     

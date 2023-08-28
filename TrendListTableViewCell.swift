@@ -130,11 +130,11 @@ class TrendListTableViewCell: BaseTableViewCell {
     }()
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-//        configureCellDesign()
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//
+////        configureCellDesign()
+//    }
 
 
     func configureCellData(row: Movie) {
@@ -159,6 +159,7 @@ class TrendListTableViewCell: BaseTableViewCell {
     override func configureView() {
         [releaseDate, genre, cardBackView, thumbnailImage, copyLinkButton, rateTitleLabel, rateValueLabel, titleLabel, originalTitleLabel, actorsLabel, goToDetailLabel, arrowImage, divider].forEach {
             contentView.addSubview($0)
+            print("configureCell")
         }
     }
     
@@ -166,6 +167,20 @@ class TrendListTableViewCell: BaseTableViewCell {
         releaseDate.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(15)
             make.leading.equalToSuperview().offset(15)
+        }
+        
+        genre.snp.makeConstraints { make in
+            make.top.equalTo(releaseDate).offset(5)
+        }
+        
+        cardBackView.snp.makeConstraints { make in
+            make.top.equalTo(genre).offset(15)
+            make.horizontalEdges.bottom.equalToSuperview().inset(15)
+        }
+        
+        thumbnailImage.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(cardBackView)
+            make.height.equalToSuperview().multipliedBy(0.66)
         }
     }
 }

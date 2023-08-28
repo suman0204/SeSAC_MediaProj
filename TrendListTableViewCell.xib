@@ -154,21 +154,6 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="actorsLabel" destination="mu5-Ta-MYC" id="YWa-oR-BVI"/>
-                <outlet property="arrowImage" destination="Err-JZ-VhS" id="3G7-EN-uQc"/>
-                <outlet property="cardBackView" destination="cCT-dR-FGq" id="TlO-h6-uhK"/>
-                <outlet property="copyLinkButton" destination="82N-GN-JdV" id="Twv-2H-syJ"/>
-                <outlet property="divider" destination="6zG-8e-YEV" id="JwY-IA-55t"/>
-                <outlet property="genre" destination="4bM-kf-A43" id="eY7-oo-dYM"/>
-                <outlet property="goToDetailLabel" destination="55O-Eq-Dyf" id="UnU-T0-ge4"/>
-                <outlet property="originalTitleLabel" destination="vyd-yT-vEo" id="eG8-pf-qlL"/>
-                <outlet property="rateTitleLabel" destination="6R8-Ch-2jg" id="eSs-nK-vsm"/>
-                <outlet property="rateValueLabel" destination="CHz-sW-Pjd" id="Hhi-jn-pe0"/>
-                <outlet property="releaseDate" destination="GEc-er-7sJ" id="ubV-gm-oSB"/>
-                <outlet property="thumbnailImage" destination="X1Y-36-r8N" id="ie4-3T-I1G"/>
-                <outlet property="titleLabel" destination="cRv-qP-qMM" id="RlN-3O-hIW"/>
-            </connections>
             <point key="canvasLocation" x="181.67938931297709" y="154.92957746478874"/>
         </tableViewCell>
     </objects>
