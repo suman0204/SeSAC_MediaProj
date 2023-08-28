@@ -45,6 +45,9 @@
 		8BF853462A98C18C00F57338 /* FirstOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853452A98C18C00F57338 /* FirstOnboardingViewController.swift */; };
 		8BF853492A98C4C900F57338 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BF853482A98C4C900F57338 /* SnapKit */; };
 		8BF8534B2A98F59C00F57338 /* SecondOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF8534A2A98F59C00F57338 /* SecondOnboardingViewController.swift */; };
+		8BF853862A9CAE9000F57338 /* TrendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853852A9CAE9000F57338 /* TrendListView.swift */; };
+		8BF853882A9CAEA500F57338 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853872A9CAEA500F57338 /* BaseView.swift */; };
+		8BF8538A2A9CAF3F00F57338 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF853892A9CAF3F00F57338 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		8BF853432A98B9E600F57338 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8BF853452A98C18C00F57338 /* FirstOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingViewController.swift; sourceTree = "<group>"; };
 		8BF8534A2A98F59C00F57338 /* SecondOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingViewController.swift; sourceTree = "<group>"; };
+		8BF853852A9CAE9000F57338 /* TrendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListView.swift; sourceTree = "<group>"; };
+		8BF853872A9CAEA500F57338 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8BF853892A9CAF3F00F57338 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 		8BAA10EC2A8B742C00A25624 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8BF853842A9CA6FD00F57338 /* Base */,
 				8BF853422A98B76700F57338 /* OnboardingView */,
 				8BD528BF2A88C2DC003C031B /* TrendListView */,
 				8BAA10ED2A8B79C800A25624 /* DetailView */,
@@ -206,6 +213,7 @@
 				8BAA10D32A88C47000A25624 /* TrendListTableViewCell.xib */,
 				8BAA10D22A88C47000A25624 /* TrendListTableViewCell.swift */,
 				8BD528BD2A88C2CD003C031B /* TrendListView.storyboard */,
+				8BF853852A9CAE9000F57338 /* TrendListView.swift */,
 			);
 			path = TrendListView;
 			sourceTree = "<group>";
@@ -229,6 +237,15 @@
 				8BF8534A2A98F59C00F57338 /* SecondOnboardingViewController.swift */,
 			);
 			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		8BF853842A9CA6FD00F57338 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8BF853872A9CAEA500F57338 /* BaseView.swift */,
+				8BF853892A9CAF3F00F57338 /* BaseTableViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +349,9 @@
 				8BF852D62A92732A00F57338 /* MoreAboutMovieViewController.swift in Sources */,
 				8BF853042A93952900F57338 /* MovieVideosCollectionViewCell.swift in Sources */,
 				8BAA10F52A8BDE7C00A25624 /* DetailViewController.swift in Sources */,
+				8BF853862A9CAE9000F57338 /* TrendListView.swift in Sources */,
 				8BF852FC2A937BCD00F57338 /* MovieVideos.swift in Sources */,
+				8BF853882A9CAEA500F57338 /* BaseView.swift in Sources */,
 				8BAA10E72A891DFE00A25624 /* URL+Extension.swift in Sources */,
 				8BF8534B2A98F59C00F57338 /* SecondOnboardingViewController.swift in Sources */,
 				8BD528BC2A88C2AC003C031B /* TrendListViewController.swift in Sources */,
@@ -344,6 +363,7 @@
 				8BAA10F82A8BE2FF00A25624 /* OverViewTableViewCell.swift in Sources */,
 				8BAA10D42A88C47000A25624 /* TrendListTableViewCell.swift in Sources */,
 				8BD528BA2A862F97003C031B /* APIKey.swift in Sources */,
+				8BF8538A2A9CAF3F00F57338 /* BaseTableViewCell.swift in Sources */,
 				8BD528A62A862F56003C031B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

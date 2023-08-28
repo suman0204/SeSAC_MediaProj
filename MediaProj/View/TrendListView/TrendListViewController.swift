@@ -11,7 +11,7 @@ class TrendListViewController: UIViewController {
     
     var trendMovie: TrendingMovie? {
         didSet {
-            trendListTableView.reloadData()
+            trendListTableView.tableView.reloadData()
         }
     }
     
@@ -22,7 +22,10 @@ class TrendListViewController: UIViewController {
     @IBOutlet var hamburgerButton: UIBarButtonItem!
     @IBOutlet var searchButton: UIBarButtonItem!
     
-    @IBOutlet var trendListTableView: UITableView!
+//    @IBOutlet var trendListTableView: UITableView!
+//    let trendListTableView = TrendListView()
+    let trendListTableView = TrendListView()
+
     @IBOutlet var trendListCell: UIView!
     
     
@@ -31,12 +34,12 @@ class TrendListViewController: UIViewController {
 //        self.navigationController?.navigationBar.shadowImage = nil
 //        UserDefaults.standard.set(false, forKey: "isLaunched")
         
-        trendListTableView.delegate = self
-        trendListTableView.dataSource = self
-        trendListTableView.separatorStyle = .none
+        trendListTableView.tableView.delegate = self
+        trendListTableView.tableView.dataSource = self
+        trendListTableView.tableView.separatorStyle = .none
         
-        let nib = UINib(nibName: "TrendListTableViewCell", bundle: nil)
-        trendListTableView.register(nib, forCellReuseIdentifier: "TrendListTableViewCell")
+//        let nib = UINib(nibName: "TrendListTableViewCell", bundle: nil)
+//        trendListTableView.register(nib, forCellReuseIdentifier: "TrendListTableViewCell")
         
 
         TrendingAPIManager.shared.callRequest(type: .day) { result in
@@ -90,7 +93,7 @@ extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = trendListTableView.dequeueReusableCell(withIdentifier: "TrendListTableViewCell") as! TrendListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendListTableViewCell") as! TrendListTableViewCell
         print("row======")
         print(trendMovie)
         print(trendMovie?.results[indexPath.row])

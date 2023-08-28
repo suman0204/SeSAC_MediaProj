@@ -47,7 +47,6 @@
                     <connections>
                         <outlet property="hamburgerButton" destination="qbK-uC-asu" id="UoH-Ah-sLA"/>
                         <outlet property="searchButton" destination="n5Z-gN-Wpz" id="4Ta-Hs-Mkv"/>
-                        <outlet property="trendListTableView" destination="Ais-tD-Dxx" id="ecK-NS-6HL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
