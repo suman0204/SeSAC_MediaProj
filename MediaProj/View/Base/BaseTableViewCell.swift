@@ -20,7 +20,7 @@ class BaseTableViewCell: UITableViewCell {
     }
     
     func configureView() {
-        
+        print("Base TableViewCell")
     }
     
     func setConstraints() {

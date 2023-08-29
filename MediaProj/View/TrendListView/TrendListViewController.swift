@@ -25,6 +25,10 @@ class TrendListViewController: UIViewController {
 //    @IBOutlet var trendListTableView: UITableView!
 //    let trendListTableView = TrendListView()
     let trendListTableView = TrendListView()
+    
+    override func loadView() {
+        self.view = trendListTableView
+    }
 
     @IBOutlet var trendListCell: UIView!
     
@@ -73,7 +77,14 @@ class TrendListViewController: UIViewController {
         print(trendMovie)
 //        print(credits)
         print("trednListViewController-credits=======")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(profileButtonClicked))
 
+    }
+    
+    @objc func profileButtonClicked() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 
@@ -148,4 +159,6 @@ extension TrendListViewController: UITableViewDelegate, UITableViewDataSource {
         
         print("didselect")
     }
+    
+    
 }
