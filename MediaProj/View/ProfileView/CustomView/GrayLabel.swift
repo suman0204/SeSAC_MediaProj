@@ -1,5 +1,5 @@
 //
-//  WhiteLabel.swift
+//  GrayLabel.swift
 //  MediaProj
 //
 //  Created by 홍수만 on 2023/08/30.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WhiteLabel: UILabel {
+class GrayLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
@@ -18,7 +18,7 @@ class WhiteLabel: UILabel {
     }
     
     private func setUpView() {
-        textColor = .white
+        textColor = .gray
         font = .systemFont(ofSize: 14)
         
     }

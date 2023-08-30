@@ -33,6 +33,7 @@ class ProfileEditView: BaseView {
     let tableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileTableViewCell")
+        view.backgroundColor = .black
        return view
     }()
     

@@ -10,7 +10,7 @@ import UIKit
 class BlueLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setUpView()
     }
     
     required init?(coder: NSCoder) {
@@ -18,7 +18,7 @@ class BlueLabel: UILabel {
     }
     
     private func setUpView() {
-        textColor = .blue
+        textColor = .systemBlue
         font = .systemFont(ofSize: 13)
     }
 }
