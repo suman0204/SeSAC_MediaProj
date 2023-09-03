@@ -136,7 +136,24 @@ class TrendListTableViewCell: BaseTableViewCell {
 ////        configureCellDesign()
 //    }
 
+    //TrendingAllView에서 사용될 함수
+    func configureCellTrednAllData(row: TrendAllResult) {
+        releaseDate.text = row.releaseDate
+        genre.text = "#\(row.genreText)"
+        
+        thumbnailImage.kf.setImage(with: URL(string: row.backdropURL))
+        
+        
+        rateValueLabel.text = row.voteAvgToText
+        
+        titleLabel.text = row.title
+        
+        originalTitleLabel.text = "(\(row.originalTitle))"
+        
+        actorsLabel.text = "castNames"
 
+    }
+    
     func configureCellData(row: Movie) {
         releaseDate.text = row.releaseDate
         genre.text = "#\(row.genreText)"
@@ -151,9 +168,7 @@ class TrendListTableViewCell: BaseTableViewCell {
         originalTitleLabel.text = "(\(row.originalTitle))"
         
         actorsLabel.text = "castNames"
-        
-        
-       
+
     }
     
     override func configureView() {

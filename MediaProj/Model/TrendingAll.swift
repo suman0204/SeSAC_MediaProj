@@ -26,7 +26,7 @@ struct TrendAllResult: Codable {
     let backdropPath: String
     let id: Int
     let name: String?
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String?
     let originalName: String?
     let overview, posterPath: String
     let mediaType: TrendAllMediaType
@@ -38,6 +38,18 @@ struct TrendAllResult: Codable {
     let originCountry: [String]?
     let title, originalTitle, releaseDate: String?
     let video: Bool?
+    
+    var backdropURL: String {
+        return "https://image.tmdb.org/t/p/original\(backdropPath)"
+    }
+    
+    var voteAvgToText: String {
+        return String(format: "%.1f", voteAverage)
+    }
+
+    var genreText: String {
+        return genre[genreIDS[0]] ?? "장르 정보가 없습니다"
+    }
 
     enum CodingKeys: String, CodingKey {
         case adult
@@ -59,6 +71,28 @@ struct TrendAllResult: Codable {
         case releaseDate = "release_date"
         case video
     }
+    
+    let genre = [
+        28 : "Action",
+        12 : "Adventure",
+        16 : "Animation",
+        35 : "Comedy",
+        80 : "Crime",
+        99 : "Documentary",
+        18 : "Drama",
+        10751 : "Family",
+        14 : "Fantasy",
+        36 : "History",
+        27 : "Horror",
+        10402 : "Music",
+        9648 : "Mystery",
+        10749 :"Romance",
+        878 : "Science Fiction",
+        10770 : "TV Movie",
+        53 : "Thriller",
+        10752 : "War",
+        37 : "Western"
+    ]
 }
 
 enum TrendAllMediaType: String, Codable {
@@ -67,9 +101,9 @@ enum TrendAllMediaType: String, Codable {
     case person = "person"
 }
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case ja = "ja"
-    case nl = "nl"
-    case sv = "sv"
-}
+//enum OriginalLanguage: String, Codable {
+//    case en = "en"
+//    case ja = "ja"
+//    case nl = "nl"
+//    case sv = "sv"
+//}
