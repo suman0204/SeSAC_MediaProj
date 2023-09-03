@@ -25,10 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = OnboardingViewController()
             window?.rootViewController = vc
         } else {
-            let sb = UIStoryboard(name: "TrendListView", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "TrendListViewController") as! TrendListViewController
-            let nav = UINavigationController(rootViewController: vc)
-            window?.rootViewController = nav
+//            let sb = UIStoryboard(name: "TrendListView", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "TrendListViewController") as! TrendListViewController
+//            let nav = UINavigationController(rootViewController: vc)
+//            window?.rootViewController = nav
+            let vc = TrendingAllViewController()
+            window?.rootViewController = vc
         }
         
         window?.makeKeyAndVisible()

@@ -87,4 +87,50 @@ class TrendingAPIManager {
             }
         }
     }
+    
+    
+    //Trendig/All/Day API URLSession으로 불러오기
+    func callTrendingAllDayRequest(completionHandler: @escaping (TrendingAll?) -> Void) {
+        
+        guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/day") else { return }
+        
+        var request = URLRequest(url: url) // Default: GET
+    
+        //header 등록
+        request.addValue(APIKey.tmdbAccept, forHTTPHeaderField: "accept")
+        request.addValue(APIKey.tmdbAuthorization, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            DispatchQueue.main.async {
+                if let error = error {
+                    completionHandler(nil)
+                    print(error)
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse, (200...500).contains(response.statusCode) else {
+                    print(error)
+                    completionHandler(nil)
+                    return
+                }
+                
+                guard let data = data else {
+                    completionHandler(nil)
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(TrendingAll.self, from: data)
+                    completionHandler(result)
+                    print(result)
+                } catch {
+                    print(error)
+                }
+            }
+            
+        }.resume()
+        
+    }
+    
 }
